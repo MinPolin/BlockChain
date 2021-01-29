@@ -2,7 +2,6 @@ from django.shortcuts import render
 import requests
 import json
 from django.core.paginator import Paginator
-
 import datetime
 from .models import Block
 
