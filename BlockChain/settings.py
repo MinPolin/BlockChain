@@ -130,8 +130,9 @@ PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
 
 
 # Extra lookup directories for collectstatic to find static files
+
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
+    os.path.join(BASE_DIR, 'static'),
 )
 import dj_database_url
 prod_db  =  dj_database_url.config(conn_max_age=500)
