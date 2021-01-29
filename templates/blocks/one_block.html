@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href='{% static "one_block.css" %}' type="text/css">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <thead><th colspan="2">Сведения о блоке</th></thead>
+    <tbody>
+    <tr>
+        <td>Высота блока</td><td>{{ block.height }}</td>
+    </tr>
+        <tr>
+        <td>Хэш блока</td><td>{{ block.hash }}</td>
+    </tr>
+        <tr>
+        <td>Время</td><td>{{ block.date|date:'Y-m-d H:i:s' }}</td>
+    </tr>
+        <tr>
+        <td>Количество транзакций</td><td>{{ block.transaction_count }}</td>
+    </tr>
+
+    <tr>
+        <td>Miner</td><td>{{ block.miner }}</td>
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>

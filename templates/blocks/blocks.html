@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href='{% static "blocks.css" %}' type="text/css">
+    <title>Title</title>
+</head>
+
+<body>
+<table>
+<thead><tr ><th >Высота блока</th> <th >Время блока</th><th >Miner</th> <th >Количество <br> транзакций</th></tr></thead>
+<tbody>
+{% for item in page_obj %}
+    <tr>
+    <td><a href="{% url 'one_block' item.height%}">{{ item.height }}</a></td><td>{{ item.date|date:'Y-m-d H:i:s' }}</td>
+    <td>{{ item.miner }}</td><td>{{ item.transaction_count }}</td>
+    </tr>
+
+{% endfor %}
+</tbody>
+
+</table>
+<div class="pagination">
+				<span class="step-links">
+					{% if page_obj.has_previous %}
+						<a href="?page=1">&laquo; first</a>
+						<a href="?page={{ page_obj.previous_page_number }}">previous</a>
+					{% endif %}
+
+					<span class="current">
+						Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+					</span>
+
+					{% if page_obj.has_next %}
+						<a href="?page={{ page_obj.next_page_number }}">next</a>
+						<a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+					{% endif %}
+				</span>
+			</div>
+
+</body>
+</html>
