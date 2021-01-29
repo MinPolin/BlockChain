@@ -26,7 +26,7 @@ SECRET_KEY="zm__o0%w_c^nc0_3*5ej!-poa=$1r0!&+)s4#+8bxymear-04_"
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['block---chain.herokuapp.com','127.0.0.1']
 
 
 # Application definition
